@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Data Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Client Information Form</h2>
+        <!-- Form action matches your existing servlet URL mapping exactly -->
+        <form action="UserServlet" method="post">
+            
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company">
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter full address"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="clientType">Client Type:</label>
+                <select id="clientType" name="clientType" required>
+                    <option value="">Select Client Type</option>
+                    <option value="individual">Individual</option>
+                    <option value="business">Business</option>
+                    <option value="corporate">Corporate</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="serviceRequired">Service Required:</label>
+                <select id="serviceRequired" name="serviceRequired">
+                    <option value="">Select Service</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="development">Development</option>
+                    <option value="support">Support</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" placeholder="Any additional information or requirements"></textarea>
+            </div>
+            
+            <input type="submit" value="Submit Client Data">
+        </form>
+    </div>
+</body>
+</html>
